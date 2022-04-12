@@ -13,8 +13,11 @@ const inputElevation = document.querySelector('.form__input--elevation');
 
 /// Use Geolocation API from the browser
 if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        console.log(position);
+    navigator.geolocation.getCurrentPosition(
+    function(position) {
+        const {latitude} = position.coords;
+        const {longitude} = position.coords;
+        console.log(`https://www.google.es/maps/@${latitude},${longitude},15z?hl=es&authuser=0`);
     }, function() {
         alert('Could not get your position')
     });
