@@ -293,6 +293,11 @@ class App {
             this._renderWorkout(work);
         })
     }
+
+    reset() {
+        localStorage.removeItem('workouts');
+        location.reload();
+    }
 }
 
 // creating the new object base on the App class
